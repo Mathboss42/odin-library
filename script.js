@@ -20,11 +20,12 @@ function closeForm() {
     libraryContainer.classList.remove('blurred');
 }
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read, dataIndex) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = Boolean(read);
+    this.dataIndex = dataIndex;
 }
 
 function addBookToLibrary(e) {
@@ -38,11 +39,20 @@ function addBookToLibrary(e) {
         values.push(value);
     }
     // console.log(values);
-    const newBook = new Book(values[0], values[1], values[2], values[3]);
+    const newBook = new Book(values[0], values[1], values[2], values[3], myLibrary.length);
     myLibrary.push(newBook);
     console.log(myLibrary);
     closeForm();
-    createNewCard(newBook);
+    // createNewCard(newBook);
+    displayBooks()
+}
+
+function displayBooks() {
+    cardsContainer.textContent = '';
+    console.log('displayBooks')
+    for (let i = 0; i < myLibrary.length; i++) {
+        createNewCard(myLibrary[i]);
+    }
 }
 
 function createNewCard(book) {
@@ -68,6 +78,10 @@ function createNewCard(book) {
     }
     const placeholder = document.createElement('div');
     placeholder.classList.add('card');
+    placeholder.setAttribute('data-index', book.dataIndex);
     placeholder.setHTML(stringTemplate);
     cardsContainer.appendChild(placeholder);
+    console.log('createNewCard');
 }
+
+displayBooks();

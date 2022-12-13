@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(50, 56, 61);
+    height: 100vh;
+}
+
+.library-container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(32, 37, 41);
+}
+
+h1 {
+    color: beige;
+}
+
+.cards-container {
+    background-color: rgb(50, 56, 61);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-auto-rows: 300px;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.read-checkbox {
+    display: flex;
+}
+
+p {
+    font-size: 24px;
+}
+
+.new-book-form {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 200px;
+    background-color: aliceblue;
+}
+
+.blurred {
+    filter: blur(4px);
+}

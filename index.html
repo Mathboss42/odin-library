@@ -9,10 +9,29 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="new-book-form">
-
+    <div class="new-book-form-container hidden">
+        <h3>Add New Book</h3>
+        <form action="" method="get" class="new-book-form">
+            <div class="title">
+                <label for="new-book-title">Title: </label>
+                <input type="text" id="new-book-title" name="new-book-title" placeholder="Dune" required>
+            </div>
+            <div class="author">
+                <label for="new-book-author">Author: </label>
+                <input type="text" id="new-book-author" name="new-book-author" placeholder="Frank Herbert" required>
+            </div>
+            <div class="pages">
+                <label for="new-book-pages">Pages: </label>
+                <input type="number" min="0" id="new-book-pages" name="new-book-pages" placeholder="412" required>
+            </div>
+            <div class="read">
+                <label for="new-book-read">Read: </label>
+                <input type="checkbox" id="new-book-read" name="new-book-read">
+            </div>
+            <button type="submit">Add Book</button>
+        </form>
     </div>
-    <div class="library-container blurred">
+    <div class="library-container">
         <div class="header">
             <h1>Odin Library</h1>
             <button class="add-book-button">Add Book</button>
@@ -23,7 +42,7 @@
                 <p>Author: </p>
                 <p>Pages: </p>
                 <div class="read-checkbox">
-                    <input type="checkbox" id="card-read">
+                    <input type="checkbox" id="card-read" checked disabled>
                     <label for="card-read">Read</label>
                 </div>
                 <button class="delete-button">Delete</button>

@@ -57,17 +57,36 @@ function closeForm() {
     libraryContainer.classList.remove('blurred');
 }
 
-function Book(title, author, pages, read, dataIndex) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = Boolean(read);
-    this.dataIndex = dataIndex;
+//=====OLD SYNTAX=====//
+
+// function Book(title, author, pages, read, dataIndex) {
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = Boolean(read);
+//     this.dataIndex = dataIndex;
+// }
+
+// Book.prototype.switchReadStatus = function() {
+//     this.read = !(this.read);
+// }
+
+//=====END OF OLD SYNTAX=====// 
+
+class Book {
+    constructor(title, author, pages, read, dataIndex) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = Boolean(read);
+        this.dataIndex = dataIndex;
+    }
+
+    switchReadStatus() {
+        this.read = !(this.read);
+    }
 }
 
-Book.prototype.switchReadStatus = function() {
-    this.read = !(this.read);
-}
 
 function addBookToLibrary(e) {
     e.preventDefault();

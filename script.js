@@ -55,6 +55,7 @@ function openForm() {
 function closeForm() {
     addBookFormContainer.classList.add('hidden');
     libraryContainer.classList.remove('blurred');
+    newBookForm.reset();
 }
 
 //=====OLD SYNTAX=====//
